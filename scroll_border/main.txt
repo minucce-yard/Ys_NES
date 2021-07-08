@@ -1,0 +1,91 @@
+;
+;  Code should be used only for educational, documentation and modding purposes
+;
+
+
+;
+;  Upload new tiles + attributes when scrolling map
+;
+
+
+%org($d8bb, $0f)				; 0x3d8cb
+
+
+scroll_border:
+
+.scroll_down:
+	lda $04
+	and #$1f
+	bne ..tile_check
+
+	jsr $dc9c					; upload attr
+	jmp ..upload_tile			; alternate: beq or bcs
+
+
+
+..tile_check:
+	lda $04
+	and #$07
+	bne ..exit
+
+..upload_tile:
+	jsr $dd08					; upload tile
+
+
+
+..exit:
+	jsr $d7ec
+	inc $5c
+	jsr $e7de
+	rts
+
+
+warnpc $d8dd
+
+
+
+; ////////////////////////////////////////////////////////////////////
+; ////////////////////////////////////////////////////////////////////
+
+
+
+%org($d877, $0f)				; 0x3d887
+
+
+.scroll_left:
+	lda $02
+	and #$07
+	bne ..exit
+
+	jsr $dc4c					; upload attr
+	jsr $dcd4					; upload tile
+
+
+
+..exit:
+	jsr $d7f0
+	inc $5c
+	jsr $e7b9
+	rts
+
+
+warnpc $d899
+
+
+
+; ////////////////////////////////////////////////////////////////////
+; ////////////////////////////////////////////////////////////////////
+
+
+
+%org($d867, $0f)
+
+.scroll_right:
+	cmp #$00					; update right column tiles
+
+warnpc $d869
+
+
+
+%org($b225, $05)
+	adc #$07					; update right column tiles

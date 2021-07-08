@@ -1,0 +1,11 @@
+Border hud on world map likes to flicker a lot
+-  Scroll and nametable are swapped out during active draw
+
+
+
+After scanline 0, pre-buffer writes
+-  Scroll (6-5-x-x) + nametable (-xxxx)
+
+
+After sprite 0, finish during h-blank
+-  Scroll (x-x-5-6) + nametable (x----)

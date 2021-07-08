@@ -1,0 +1,34 @@
+;
+;  asar
+;  -  https://github.com/RPGHacker/asar
+;
+
+
+
+norom
+
+
+macro org(address,bank)
+	!headersize = $10
+	!banksize = $4000
+
+
+	org (<address>%!banksize)+(!banksize*<bank>)+!headersize
+
+
+	base <address>
+endmacro
+
+
+
+; ###########################################################
+; ###########################################################
+
+
+
+	incsrc hud_split/main.txt
+	incsrc pixel_cleanup/main.txt
+	incsrc screen_switch/main.txt
+	incsrc scroll_border/main.txt
+	incsrc sprite_border/main.txt
+	incsrc start_hud/main.txt

@@ -1,0 +1,145 @@
+;
+;  Code should be used only for educational, documentation and modding purposes
+;
+
+
+%org($d7d6, $0f)				; 0x3d7e6
+
+
+;
+;  In-game status bar
+;
+
+
+hud_split:
+
+
+.game_hud:
+	lda #$10					; 2000 ppu
+
+
+
+; ////////////////////////////////////////////////////////
+; ////////////////////////////////////////////////////////
+
+
+
+.wait_draw:
+	pha
+
+
+..loop:
+	lda $2002					; wait scanline 0+
+	asl
+	bmi ..loop
+
+
+
+	lda #$0c+1					; no cf  (asl)
+
+..loop2:
+	sbc #$01					; manual scanline 1+
+	bpl ..loop2
+
+	jmp .cache_data
+
+
+warnpc $d7e8
+
+
+
+; ###############################################################
+; ###############################################################
+
+
+
+%org($c6fe, $0f)				; 0x3c70e
+	lda $ac
+	beq .text_box1
+
+
+.text_box0:
+	lda #$80					; 2200 ppu -- close box
+	bne .text_call
+
+
+.text_box1:
+	lda #$50					; 2100 ppu -- text box  (40 = status menu)
+
+
+.text_call:
+	jsr .wait_draw
+	jmp $c385
+
+
+
+; ////////////////////////////////////////////////////////////
+; ////////////////////////////////////////////////////////////
+
+
+
+.cache_data:
+	lda #$1d					; buffer nametable swap  (4/5)
+	jsr $f994
+
+
+
+	; lda #$00					; map $400 * 0-3  [---- xx--]  (identical)
+	sta $2006
+
+
+	pla
+	sta $2005					; [Y = <yy>-----<xx>]
+								; yy = 0-3 * $100 map
+								; xx = 0-7  ypos
+
+
+
+	cmp #$40
+	beq .split
+
+
+	lda #$40
+
+
+..loop:
+	bit $2002					; wait hud line
+	bvc ..loop
+
+
+; =============================================================
+; =============================================================
+
+
+.split:
+	lda #$00					; 0-7 xpos
+	sta $2005
+
+	; lda #$00					; map 00-ff
+	sta $2006
+
+	; lda #$01					; map swap  (no chr-rom, bit doesn't matter)
+	sta $9fff
+
+	rts
+
+
+warnpc $c735
+
+
+
+; ############################################################
+; ############################################################
+
+
+
+%org($d7ac, $0f)				; 0x3d7bc
+
+.status_menu:
+	lda #$40					; 2100 ppu
+	pha
+
+	jmp .cache_data
+
+
+warnpc $d7d6

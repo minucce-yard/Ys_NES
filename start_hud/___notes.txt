@@ -1,0 +1,4 @@
+Starting new game, water tiles are shown in place of numbers
+
+
+Write blank tiles $ff before turning on screen

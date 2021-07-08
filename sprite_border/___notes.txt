@@ -1,0 +1,4 @@
+Sprites can wander around the hud, drawing on top
+
+
+Reposition the 8-sprite limit column to hud line

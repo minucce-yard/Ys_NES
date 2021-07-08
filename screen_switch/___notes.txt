@@ -1,0 +1,8 @@
+Engine relies on 2002 vblank polling
+-  Glitchy on / off screen effects  (returns value during active draw)
+-  Hard spin deadlocks
+
+
+
+NMI handler has a blocking flag to avoid nested interrupts
+-  Use this flag to exit near start of VBlank

@@ -1,0 +1,92 @@
+;
+;  Code should be used only for educational, documentation and modding purposes
+;
+
+
+
+;
+;  Hide sprites per 8 line limit
+;
+
+
+%org($e3f4, $0f)
+
+
+sprite_border:
+	ldx #$1c
+
+
+.loop:
+	lda #$ae+1					; ypos = hud line
+	sta $0704,x
+
+	lda #$fe					; solid tile
+	sta $0705,x
+
+	lda #$00					; no attribute
+	sta $0706,x
+
+	lda #$f8					; xpos = right bar
+	sta $0707,x
+
+	dex
+	dex
+	dex
+	dex
+	bpl .loop
+
+	rts
+
+
+warnpc $e411
+
+
+
+; //////////////////////////////////////////////////////////////////
+; //////////////////////////////////////////////////////////////////
+
+
+
+;
+;  Draw player after clipping column
+;
+
+
+%org($bcc4, $09)				; 0x27cd4
+
+.player_sprite:
+	sta $0724,x					; ypos
+	inx
+
+
+	lda ($1c),y					; tile #
+	sta $0724,x
+	iny
+	inx
+
+
+	lda ($1c),y					; palette
+	sta $0724,x
+
+
+	lda $049f					; behind bg
+	and #$08
+	beq ..xpos
+
+
+	lda $0724,x
+	ora #$20
+	sta $0724,x
+
+
+..xpos:
+	inx
+
+	lda $bcf4,y					; xpos
+	clc
+	adc $77
+	sta $0724,x
+
+
+warnpc $bced
+	

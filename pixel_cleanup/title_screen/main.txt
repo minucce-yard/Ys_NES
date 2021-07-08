@@ -1,0 +1,17 @@
+;
+;  Code should be used only for educational, documentation and modding purposes
+;
+
+
+;
+;  Open mouth
+;
+
+
+%org($c50f, $03)				; 0xc51f
+	db $5d						; bg
+
+
+
+%org($13677, $04)				; 0x13687
+	db $40						; sprite

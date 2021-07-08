@@ -1,0 +1,65 @@
+;
+;  Code should be used only for educational, documentation and modding purposes
+;
+
+
+;
+;  Turn on screen during v-blank
+;
+
+
+%org($c34c, $0f)
+
+	jsr $d019					; nmi on
+	jsr wait_frame				; run 1 frame
+
+	jsr $d023					; wait vblank
+	jsr $d008					; screen on
+
+warnpc $c358
+
+
+
+; #############################################################
+; #############################################################
+
+
+
+;
+;  Status screen
+;
+
+
+%org($c05b, $0f)
+
+	jsr $febd
+
+
+status_screen:
+	jsr wait_vblank
+	jsr $d004					; screen off
+	jsr $d012					; nmi off
+
+warnpc $c067
+
+
+
+; /////////////////////////////////////////////////////////////
+; /////////////////////////////////////////////////////////////
+
+
+
+%org($c130, $0f)
+
+	jmp status_screen
+
+warnpc $c133
+
+
+
+; #############################################################
+; #############################################################
+
+
+
+	incsrc "wait_nmi.txt"

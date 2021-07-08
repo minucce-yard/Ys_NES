@@ -1,0 +1,4 @@
+When moving around, new tiles are uploaded but colors are wrong
+
+
+Upload attributes with tiles where needed
