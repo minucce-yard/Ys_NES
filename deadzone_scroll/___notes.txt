@@ -1,0 +1,4 @@
+Screen can take some time before scrolling starts
+
+
+Move window closer to center of screen

@@ -2,7 +2,7 @@ Ys - Service Repair
 
 
 Latest:
-2021-10-05
+2021-10-09
 
 
 
@@ -23,11 +23,14 @@ Patching:
 -  Optional patch:
 
    *  English  (David Mullen / MakoKnight)
-      http://www.romhacking.net/translations/238/
+      https://www.romhacking.net/translations/238/
 
 
 
--  Apply basic.ips
+-  Choose patch:
+
+   * basic.ips
+   * plus.ips
 
 
 
@@ -72,10 +75,29 @@ ___________________________________________________
 
 
 
+Plus:
+
+
+deadzone_scroll
+*  Scroll game window earlier
+
+
+
+___________________________________________________
+
+
+
 Commits:
 
 
-6.1 - screen_switch updated
+7.1 - scroll_border updated
+    *  Fix crash on pixel 255
+
+
+7 - deadzone_scroll released
+
+
+6.1 - scroll_border updated
     *  Fix right-side screen  (original)
 
 

@@ -80,6 +80,7 @@ warnpc $d899
 
 %org($d867, $0f)
 
+
 .scroll_right:
 	cmp #$00					; update right column tiles
 
@@ -87,5 +88,16 @@ warnpc $d869
 
 
 
+
+
+if 0
+
+;
+;  Sprite 0 hit does not work on pixel 255
+;
+
+
 %org($b225, $05)
 	adc #$07					; update right column tiles
+
+endif

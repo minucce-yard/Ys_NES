@@ -1,0 +1,19 @@
+;
+;  Code should be used only for educational, documentation and modding purposes
+;
+
+
+%org($da95, $0f)
+	cmp #$60				; up scroll
+
+
+%org($db14, $0f)
+	cmp #$70				; left scroll
+
+
+%org($db4d, $0f)
+	cmp #$90				; right scroll
+
+
+%org($dad2, $0f)
+	cmp #$70				; down scroll

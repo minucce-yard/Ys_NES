@@ -1,0 +1,9 @@
+macro org(address,bank)
+	!headersize = $10
+
+
+	org (<address>%!banksize)+(!banksize*<bank>)+!headersize
+
+
+	base <address>
+endmacro
