@@ -2,3 +2,12 @@ When moving around, new tiles are uploaded but colors are wrong
 
 
 Upload attributes with tiles where needed
+
+
+_______________________________________________
+
+
+
+6.2
+
+Pixel 255 does not work with Sprite 0 hits

@@ -1,0 +1,67 @@
+;
+;  Code should be used only for educational, documentation and modding purposes
+;
+
+
+%org($c000+($50*$10), $03)
+	incbin "bg_50.bin"				; Right chin
+
+
+
+%org($c000+($62*$10), $03)
+	incbin "bg_62.bin"				; Left chin
+	incbin "bg_63.bin"
+
+
+
+%org($c000+($87*$10), $03)
+	incbin "bg_87.bin"				; Left armpit
+	incbin "bg_88.bin"
+
+
+
+%org($c000+($8b*$10), $03)
+	incbin "bg_8b.bin"				; Right armpit
+	incbin "bg_8c.bin"
+	incbin "bg_8d.bin"
+
+
+
+; //////////////////////////////////////////////////////////
+; //////////////////////////////////////////////////////////
+
+
+
+%org($13400+($08*$10), $04)
+	incbin "sp_48-4f.bin"			; Logo
+	incbin "sp_50-57.bin"
+	incbin "sp_58-5f.bin"
+	incbin "sp_60-67.bin"
+	incbin "sp_68-6e.bin"
+
+
+
+; //////////////////////////////////////////////////////////
+; //////////////////////////////////////////////////////////
+
+
+
+;
+;  Extra oam -- crystal ball
+;
+
+
+%org($a390, $05)
+	db $70, $60, $01, $88
+
+
+
+%org($a3a4, $05)
+	db $5f, $6a, $01, $78
+	db $5f, $61, $01, $80
+	db $68, $63, $01, $88
+
+
+
+%org($a3b8, $05)
+	db $70, $62, $01, $70

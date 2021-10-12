@@ -2,7 +2,7 @@ Ys - Service Repair
 
 
 Latest:
-2021-10-09
+2021-10-11
 
 
 
@@ -10,27 +10,61 @@ Latest:
 
 
 
-Patching:
+Japan
 
 
--  Ys (Japan).nes
+0)  Ys (Japan).nes
 
-   MD-5:  96BC9E45F3986A8281D799690B3C3A12
-   SHA-1: 0F940EF923B43C1821F9ABB4DCA642527FA04A8F
-
-
-
--  Optional patch:
-
-   *  English  (David Mullen / MakoKnight)
-      https://www.romhacking.net/translations/238/
+    MD-5:  96BC9E45F3986A8281D799690B3C3A12
+    SHA-1: 0F940EF923B43C1821F9ABB4DCA642527FA04A8F
 
 
 
--  Choose patch:
+1)  Choose one of the following packages
 
-   * basic.ips
-   * plus.ips
+    * Japan/basic.ips
+    * Japan/plus.ips
+
+
+
+--------------------------------------------------------------------
+
+
+
+English  (David Mullen / MakoKnight)
+
+
+0)  Apply this patch on top of Ys (Japan).nes
+    https://www.romhacking.net/translations/238/
+
+
+
+1)  Choose one of the packages
+
+     * English/basic.ips
+     * English/plus.ips
+
+
+
+--------------------------------------------------------------------
+
+
+
+English  (David Mullen / MakoKnight)
+
++  Title Screen  (pacnsacdave)
+
+
+
+0)  Apply this patch on top of Ys (Japan).nes
+    http://pacnsacdave.weebly.com/ys.html
+
+
+
+1)  Choose one of the packages
+
+     * English_Title/basic.ips
+     * English_Title/plus.ips
 
 
 
@@ -43,11 +77,6 @@ Basic:
 
 hud_split
 *  Fix status bar border
-
-
-
-pixel_cleanup
-*  Fix stray mouth pixel on title screen
 
 
 
@@ -71,6 +100,11 @@ start_hud
 
 
 
+title_screen
+*  Fix stray pixels
+
+
+
 ___________________________________________________
 
 
@@ -83,11 +117,20 @@ deadzone_scroll
 
 
 
-___________________________________________________
+//////////////////////////////////////////////////////////////////
 
 
 
 Commits:
+
+
+7.3 - title_screen renamed
+    *  pixel_cleanup split into japan, english
+    *  Work done on English Title Screen
+
+
+7.2 - sprite_border updated
+    *  Fix sprite clipping on right border
 
 
 7.1 - scroll_border updated
@@ -120,7 +163,7 @@ Commits:
 
 
 
-_______________________________________________
+//////////////////////////////////////////////////////////////////
 
 
 

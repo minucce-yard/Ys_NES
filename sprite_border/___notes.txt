@@ -2,3 +2,16 @@ Sprites can wander around the hud, drawing on top
 
 
 Reposition the 8-sprite limit column to hud line
+
+
+__________________________________________________
+
+
+
+7.2
+
+
+Clip sprites on right border
+
+
+Draw border first, then player sprite

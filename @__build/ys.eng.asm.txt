@@ -1,0 +1,45 @@
+;
+;  asar
+;  -  https://github.com/RPGHacker/asar
+;
+
+
+
+norom
+
+
+!banksize = $4000
+
+
+	incsrc helper.txt
+
+
+!BUILD_LEVEL = 9
+
+
+
+; ###########################################################
+; ###########################################################
+
+
+
+
+if !BUILD_LEVEL >= 1
+
+	incsrc hud_split/main.txt
+	incsrc screen_switch/main.txt
+	incsrc scroll_border/main.txt
+	incsrc sprite_border/main.txt
+	incsrc start_hud/main.txt
+	incsrc title_screen/japan/main.txt
+
+endif
+
+
+
+
+if !BUILD_LEVEL >= 2
+
+	incsrc deadzone_scroll/main.txt
+
+endif

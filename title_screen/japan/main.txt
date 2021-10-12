@@ -1,0 +1,23 @@
+;
+;  Code should be used only for educational, documentation and modding purposes
+;
+
+
+%org($c000+($50*$10), $03)
+	incbin "bg_50.bin"			; Right chin
+
+
+
+%org($c000+($62*$10), $03)
+	incbin "bg_62.bin"			; Left chin
+	incbin "bg_63.bin"
+
+
+
+; ////////////////////////////////////////////////////////////
+; //////////////////////////////////////////////////////////
+
+
+
+%org($13400+($27*$10), $04)
+	incbin "sp_67.bin"			; Mouth

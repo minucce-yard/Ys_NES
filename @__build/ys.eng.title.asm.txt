@@ -27,11 +27,11 @@ norom
 if !BUILD_LEVEL >= 1
 
 	incsrc hud_split/main.txt
-	incsrc pixel_cleanup/main.txt
 	incsrc screen_switch/main.txt
 	incsrc scroll_border/main.txt
 	incsrc sprite_border/main.txt
 	incsrc start_hud/main.txt
+	incsrc title_screen/english/main.txt
 
 endif
 
