@@ -124,6 +124,10 @@ deadzone_scroll
 Commits:
 
 
+7.4a - correct plus patches
+
+
+
 7.4 - hud_split updated
     *  Fix post-vblank detection crashes
 
