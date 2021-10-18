@@ -6,3 +6,12 @@ Engine relies on 2002 vblank polling
 
 NMI handler has a blocking flag to avoid nested interrupts
 -  Use this flag to exit near start of VBlank
+
+
+___________________________________________________________
+
+
+7.4
+
+
+Always clear nmi pin

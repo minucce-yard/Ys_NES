@@ -2,7 +2,7 @@ Ys - Service Repair
 
 
 Latest:
-2021-10-11
+2021-10-18
 
 
 
@@ -122,6 +122,11 @@ deadzone_scroll
 
 
 Commits:
+
+
+7.4 - hud_split updated
+    *  Fix post-vblank detection crashes
+
 
 
 7.3 - title_screen renamed

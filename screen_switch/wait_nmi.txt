@@ -32,6 +32,9 @@ wait_vblank:
 	jmp $d01d
 
 
+; nop #0
+
+
 warnpc $d036
 
 
@@ -145,7 +148,8 @@ z__d8ff:
 %org($c366, $0f)
 	dec $2c							; vblank busy count
 
-	nop #4
+	lda $2002						; clear nmi
+	nop #1
 
 	jmp $c39c
 

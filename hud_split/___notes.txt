@@ -9,3 +9,14 @@ After scanline 0, pre-buffer writes
 
 After sprite 0, finish during h-blank
 -  Scroll (x-x-5-6) + nametable (x----)
+
+
+___________________________________________________
+
+
+7.4
+
+
+Use OAM $2004 to wait for pre-scanline
+-  Wait 1 scanline for active draw
+-  Then safe to cache 6-5 scroll data

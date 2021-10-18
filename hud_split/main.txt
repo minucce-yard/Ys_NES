@@ -12,36 +12,38 @@
 
 
 hud_split:
-
-
-.game_hud:
-	lda #$10					; 2000 ppu
+	jmp .game_hud
 
 
 
-; ////////////////////////////////////////////////////////
-; ////////////////////////////////////////////////////////
+; ////////////////////////////////////////////////////
+; ////////////////////////////////////////////////////
 
 
 
-.wait_draw:
+.cache_data:
 	pha
 
 
-..loop:
-	lda $2002					; wait scanline 0+
-	asl
-	bmi ..loop
+	lda #$1d					; buffer nametable swap  (4/5)
+	jsr $f994
 
 
 
-	lda #$0c+1					; no cf  (asl)
+	; lda #$00					; map $400 * 0-3  [---- xx--]  ($03 = identical)
+	sta $2006
 
-..loop2:
-	sbc #$01					; manual scanline 1+
-	bpl ..loop2
 
-	jmp .cache_data
+	pla
+	sta $2005					; [Y = <yy>-----<xx>]
+								; yy = 0-3 * $100 map
+								; xx = 0-7  ypos
+
+
+	rts
+
+
+; nop #1
 
 
 warnpc $d7e8
@@ -58,17 +60,20 @@ warnpc $d7e8
 	beq .text_box1
 
 
+
 .text_box0:
 	lda #$80					; 2200 ppu -- close box
 	bne .text_call
+
 
 
 .text_box1:
 	lda #$50					; 2100 ppu -- text box  (40 = status menu)
 
 
+
 .text_call:
-	jsr .wait_draw
+	jsr .wait_cache
 	jmp $c385
 
 
@@ -78,40 +83,45 @@ warnpc $d7e8
 
 
 
-.cache_data:
-	lda #$1d					; buffer nametable swap  (4/5)
-	jsr $f994
+.game_hud:
+	lda #$10					; 2000 ppu
 
 
 
-	; lda #$00					; map $400 * 0-3  [---- xx--]  (identical)
-	sta $2006
+; ////////////////////////////////////////////////////////////
+; ////////////////////////////////////////////////////////////
 
 
-	pla
-	sta $2005					; [Y = <yy>-----<xx>]
-								; yy = 0-3 * $100 map
-								; xx = 0-7  ypos
 
+.wait_cache:
+	jsr wait_drawing
+
+
+
+.cache_start:
+	jsr .cache_data
 
 
 	cmp #$40
-	beq .split
+	beq .split_window
 
 
 	lda #$40
 
 
 ..loop:
-	bit $2002					; wait hud line
+	bit $2002					; wait hud line  (sprite 0)
 	bvc ..loop
 
 
+	; note: h-blank = starts late
+
+
 ; =============================================================
 ; =============================================================
 
 
-.split:
+.split_window:
 	lda #$00					; 0-7 xpos
 	sta $2005
 
@@ -122,6 +132,9 @@ warnpc $d7e8
 	sta $9fff
 
 	rts
+
+
+; nop #8
 
 
 warnpc $c735
@@ -137,9 +150,44 @@ warnpc $c735
 
 .status_menu:
 	lda #$40					; 2100 ppu
+	jmp .cache_start
+
+
+
+; ////////////////////////////////////////////////////////////
+; ////////////////////////////////////////////////////////////
+
+
+
+wait_drawing:
 	pha
 
-	jmp .cache_data
+
+	lda $2004					; wait scanline 0
+
+
+.loop:
+	cmp $2004
+	beq .loop
+
+
+; ================================================
+; ================================================
+
+
+	lda #$13					; wait 1 scanline
+
+
+.loop2:
+	sbc #$01
+	bne .loop2
+
+
+	pla
+	rts
+
+
+; nop #19
 
 
 warnpc $d7d6
