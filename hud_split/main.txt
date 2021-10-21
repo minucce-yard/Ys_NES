@@ -163,26 +163,46 @@ wait_drawing:
 	pha
 
 
-	lda $2004					; wait scanline 0
+	lda $36						; fade effect
+	beq .normal
 
 
-.loop:
-	cmp $2004
-	beq .loop
+
+.fade:
+	lda #$00					; wait past v-blank
 
 
-; ================================================
-; ================================================
-
-
-	lda #$13					; wait 1 scanline
-
-
-.loop2:
+..loop:
 	sbc #$01
-	bne .loop2
+	bne ..loop
+	beq .exit
 
 
+; ================================================
+; ================================================
+
+
+.normal:
+	lda #$40					; sprite 0
+	bit $2002
+	bvc .exit
+
+
+..loop1:
+	bit $2002					; wait scanline 0
+	bvs ..loop1
+
+
+..loop2:
+	sbc #$01					; wait active draw
+	bne ..loop2
+
+
+; ================================================
+; ================================================
+
+
+.exit:
 	pla
 	rts
 

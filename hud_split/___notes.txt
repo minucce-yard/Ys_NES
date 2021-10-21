@@ -20,3 +20,12 @@ ___________________________________________________
 Use OAM $2004 to wait for pre-scanline
 -  Wait 1 scanline for active draw
 -  Then safe to cache 6-5 scroll data
+
+
+___________________________________________________
+
+
+7.4b
+
+
+Check fading state and change post-vblank waiting method

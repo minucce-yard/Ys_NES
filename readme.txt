@@ -2,7 +2,7 @@ Ys - Service Repair
 
 
 Latest:
-2021-10-18
+2021-10-20
 
 
 
@@ -124,7 +124,13 @@ deadzone_scroll
 Commits:
 
 
-7.4a - correct plus patches
+7.4b - Emulator compatibility
+    *  hud_split updated
+
+
+
+7.4a - Redo plus patches
+    *  Include deadzone_scroll
 
 
 

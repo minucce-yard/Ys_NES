@@ -14,7 +14,7 @@ norom
 	incsrc helper.txt
 
 
-!BUILD_LEVEL = 9
+!BUILD_LEVEL ?= 9
 
 
 
