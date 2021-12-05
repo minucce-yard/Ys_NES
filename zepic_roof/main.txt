@@ -1,0 +1,87 @@
+;
+;  Code should be used only for educational, documentation and modding purposes
+;
+
+
+;  Credits to Fray for fix
+;  - https://www.romhacking.net/forum/index.php?topic=33527.msg421159#msg421159
+
+
+%org($2df0, $00)
+
+	; Zepic roof -- non-animated tile
+    db $96, $AA, $40, $35, $CC, $10, $26, $20, $00, $00, $00, $00, $00, $00, $00, $00
+
+
+; --------------------------------------------------------------------
+; --------------------------------------------------------------------
+
+
+; normal roof tiles
+
+%org($8028, $09)
+	db $9f
+
+
+%org($802b, $09)
+	db $9f
+
+
+%org($8047, $09)
+	db $9f
+
+
+%org($804c, $09)
+	db $9f
+
+
+%org($806b, $09)
+	db $9f
+
+
+%org($808f, $09)
+	db $9f
+
+
+%org($8093, $09)
+	db $9f
+
+
+%org($80c4, $09)
+	db $9f
+
+
+%org($80cb, $09)
+	db $9f
+
+
+%org($80d0, $09)
+	db $9f
+
+
+%org($80d7, $09)
+	db $9f
+
+
+%org($824b, $09)
+	db $9f
+
+
+%org($824f, $09)
+	db $9f
+
+
+%org($8250, $09)
+	db $9f
+
+
+%org($8253, $09)
+	db $9f
+
+
+%org($82fc, $09)
+	db $9f
+
+
+%org($8342, $09)
+	db $9f

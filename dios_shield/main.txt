@@ -1,0 +1,13 @@
+;
+;  Code should be used only for educational, documentation and modding purposes
+;
+
+
+;  Fixes created by SomeOldGuy
+;  - https://www.romhacking.net/forum/index.php?topic=33527.msg422123
+
+
+%org($bfd0, $02)
+
+	; Dios shield
+	db $D8, $30, $E0, $80, $08, $08, $08, $08, $79, $E1, $C3, $87, $07, $37, $77, $F7

@@ -15,6 +15,8 @@ norom
 
 
 !BUILD_LEVEL ?= 9
+!DATCHY_TITLE ?= 0
+!ENGLISH_TITLE ?= 0
 
 
 
@@ -26,14 +28,29 @@ norom
 
 if !BUILD_LEVEL >= 1
 
+	incsrc dios_shield/main.txt
 	incsrc hud_split/main.txt
+	incsrc portrait_colors/main.txt
 	incsrc screen_switch/main.txt
 	incsrc scroll_border/main.txt
 	incsrc sprite_border/main.txt
 	incsrc start_hud/main.txt
-	incsrc title_screen/english/main.txt
+	incsrc zepic_roof/main.txt
+
+
+	if !DATCHY_TITLE == 0 && !ENGLISH_TITLE == 0
+
+		incsrc title_screen/japan/main.txt
+
+	endif
+
 
 endif
+
+
+
+; ///////////////////////////////////////////////////////////
+; ///////////////////////////////////////////////////////////
 
 
 

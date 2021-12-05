@@ -1,0 +1,14 @@
+For many indoor portraits, lots of details are missing
+-  Color 3 is incorrectly assigned to $0f black
+-  Discovered by Fray
+
+
+
+Fray also provided the fix
+-  Color 0 becomes black
+-  Color 3 becomes new in-between shade, restoring many burned pixels
+
+
+
+See:
+https://www.romhacking.net/forum/index.php?topic=33527.msg421159#msg421159

@@ -1,0 +1,87 @@
+;
+;  Code should be used only for educational, documentation and modding purposes
+;
+
+
+;  Fixes created by Fray
+;  - https://www.romhacking.net/forum/index.php?topic=33527.msg421159#msg421159
+
+
+
+!JAPAN_PATCH ?= 0
+!ENGLISH_PATCH ?= 0
+!SPANISH_PATCH ?= 0
+
+
+
+; ####################################################################
+; ####################################################################
+
+
+
+%org($0c00, $00)
+
+if !DATCHY_TITLE >= 1
+
+	if !JAPAN_PATCH == 1
+		incbin "datchy - japan/hud.bin"
+
+	elseif !ENGLISH_PATCH == 1
+		incbin "datchy - english/hud.bin"
+
+	elseif !SPANISH_PATCH == 1
+		incbin "datchy - spanish/hud.bin"
+
+	endif
+
+else
+
+	if !JAPAN_PATCH == 1
+		incbin "japan/hud.bin"
+
+	elseif !ENGLISH_PATCH == 1
+		incbin "english/hud.bin"
+
+	elseif !SPANISH_PATCH == 1
+		incbin "spanish/hud.bin"
+
+	endif
+
+endif
+
+
+
+; ####################################################################
+; ####################################################################
+
+
+
+%org($8000, $02)
+
+if !DATCHY_TITLE >= 1
+
+	if !JAPAN_PATCH == 1
+		incbin "datchy - japan/font.bin"
+
+	elseif !ENGLISH_PATCH == 1
+		incbin "datchy - english/font.bin"
+
+	elseif !SPANISH_PATCH == 1
+		incbin "datchy - spanish/font.bin"
+
+	endif
+
+else
+
+	if !JAPAN_PATCH == 1
+		incbin "japan/font.bin"
+
+	elseif !ENGLISH_PATCH == 1
+		incbin "english/font.bin"
+
+	elseif !SPANISH_PATCH == 1
+		incbin "spanish/font.bin"
+
+	endif
+
+endif

@@ -1,0 +1,11 @@
+In Zepic Village, many roof tiles are wrongly animated
+-  Fray discovered they share same $00 code as water, which triggers their movement
+
+
+Fray also suggested the fix:
+-  By using a different tile code, roof tiles become static and show correctly
+
+
+
+See:
+https://www.romhacking.net/forum/index.php?topic=33527.msg421159#msg421159

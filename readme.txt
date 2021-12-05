@@ -1,70 +1,8 @@
-Ys - Service Repair
+Ys - Fluffy Repair Service
 
 
 Latest:
-2021-10-20
-
-
-
-//////////////////////////////////////////////////////////////////
-
-
-
-Japan
-
-
-0)  Ys (Japan).nes
-
-    MD-5:  96BC9E45F3986A8281D799690B3C3A12
-    SHA-1: 0F940EF923B43C1821F9ABB4DCA642527FA04A8F
-
-
-
-1)  Choose one of the following packages
-
-    * Japan/basic.ips
-    * Japan/plus.ips
-
-
-
---------------------------------------------------------------------
-
-
-
-English  (David Mullen / MakoKnight)
-
-
-0)  Apply this patch on top of Ys (Japan).nes
-    https://www.romhacking.net/translations/238/
-
-
-
-1)  Choose one of the packages
-
-     * English/basic.ips
-     * English/plus.ips
-
-
-
---------------------------------------------------------------------
-
-
-
-English  (David Mullen / MakoKnight)
-
-+  Title Screen  (pacnsacdave)
-
-
-
-0)  Apply this patch on top of Ys (Japan).nes
-    http://pacnsacdave.weebly.com/ys.html
-
-
-
-1)  Choose one of the packages
-
-     * English_Title/basic.ips
-     * English_Title/plus.ips
+2021-12-04
 
 
 
@@ -75,8 +13,23 @@ ___________________________________________________
 Basic:
 
 
+dios_shield
+*  Fixes graphics corruption with Dios' Armor Shop
+   #  credit to SomeOldGuy
+
+
+
 hud_split
 *  Fix status bar border
+
+
+
+portrait_colors
+*  Fixes graphics corruption in Olman's shop
+   #  credit to Fray
+
+
+*  Fixes bad pixels in portrait frames
 
 
 
@@ -105,6 +58,11 @@ title_screen
 
 
 
+zepic_roof
+*  Fixes roof tiles in Zepic Village
+   #  credit to Fray
+
+
 ___________________________________________________
 
 
@@ -122,6 +80,26 @@ deadzone_scroll
 
 
 Commits:
+
+
+11 - Ys title released  (English, Spanish)
+    #  credit to SomeOldGuy
+
+
+
+10 - portrait_colors released
+    #  credit to Fray
+
+
+
+9 - zepic_roof released
+    #  credit to Fray
+
+
+
+8 - dios_shield released
+    #  credit to SomeOldGuy
+
 
 
 7.4b - Emulator compatibility
@@ -189,6 +167,9 @@ Visit:
    https://github.com/minucce-yard/Ys_NES/tree/Service_Repair
 
 
+*  Discuss
+   https://www.romhacking.net/forum/index.php?topic=33527.0
+
 
 _________________________________________________________
 
@@ -204,3 +185,5 @@ Comments:
 
   35a-35b = exp
   35c-35d = max exp
+
+  35e-35f = gold
