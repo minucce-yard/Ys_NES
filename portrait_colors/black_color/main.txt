@@ -19,31 +19,15 @@
 
 
 
-%org($0c00, $00)
+%org($8000, $02)
 
 if !DATCHY_TITLE >= 1
 
-	if !JAPAN_PATCH == 1
-		incbin "datchy - japan/hud.bin"
-
-	elseif !ENGLISH_PATCH == 1
-		incbin "datchy - english/hud.bin"
+	if !ENGLISH_PATCH == 1
+		incbin "datchy - english/normal_font.bin"
 
 	elseif !SPANISH_PATCH == 1
-		incbin "datchy - spanish/hud.bin"
-
-	endif
-
-else
-
-	if !JAPAN_PATCH == 1
-		incbin "japan/hud.bin"
-
-	elseif !ENGLISH_PATCH == 1
-		incbin "english/hud.bin"
-
-	elseif !SPANISH_PATCH == 1
-		incbin "spanish/hud.bin"
+		incbin "datchy - spanish/normal_font.bin"
 
 	endif
 
@@ -56,32 +40,71 @@ endif
 
 
 
-%org($8000, $02)
+if 0
+%org($0c00, $10)
 
 if !DATCHY_TITLE >= 1
 
 	if !JAPAN_PATCH == 1
-		incbin "datchy - japan/font.bin"
+		incbin "datchy - japan/black_hud.bin"
 
 	elseif !ENGLISH_PATCH == 1
-		incbin "datchy - english/font.bin"
+		incbin "datchy - english/black_hud.bin"
 
 	elseif !SPANISH_PATCH == 1
-		incbin "datchy - spanish/font.bin"
+		incbin "datchy - spanish/black_hud.bin"
 
 	endif
 
 else
 
 	if !JAPAN_PATCH == 1
-		incbin "japan/font.bin"
+		incbin "japan/black_hud.bin"
 
 	elseif !ENGLISH_PATCH == 1
-		incbin "english/font.bin"
+		incbin "english/black_hud.bin"
 
 	elseif !SPANISH_PATCH == 1
-		incbin "spanish/font.bin"
+		incbin "spanish/black_hud.bin"
 
 	endif
 
+endif
+
+
+
+; ####################################################################
+; ####################################################################
+
+
+
+%org($8000, $12)
+
+if !DATCHY_TITLE >= 1
+
+	if !JAPAN_PATCH == 1
+		incbin "datchy - japan/black_font.bin"
+
+	elseif !ENGLISH_PATCH == 1
+		incbin "datchy - english/black_font.bin"
+
+	elseif !SPANISH_PATCH == 1
+		incbin "datchy - spanish/black_font.bin"
+
+	endif
+
+else
+
+	if !JAPAN_PATCH == 1
+		incbin "japan/black_font.bin"
+
+	elseif !ENGLISH_PATCH == 1
+		incbin "english/black_font.bin"
+
+	elseif !SPANISH_PATCH == 1
+		incbin "spanish/black_font.bin"
+
+	endif
+
+endif
 endif

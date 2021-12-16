@@ -2,7 +2,7 @@ Ys - Fluffy Repair Service
 
 
 Latest:
-2021-12-04
+2021-12-15
 
 
 
@@ -82,6 +82,11 @@ deadzone_scroll
 Commits:
 
 
+11a - Datchy fixes for English, Spanish translations
+    *  font tiles
+
+
+
 11 - Ys title released  (English, Spanish)
     #  credit to SomeOldGuy
 
@@ -102,12 +107,12 @@ Commits:
 
 
 
-7.4b - Emulator compatibility
+7.4b - emulator compatibility
     *  hud_split updated
 
 
 
-7.4a - Redo plus patches
+7.4a - redo plus patches
     *  Include deadzone_scroll
 
 
