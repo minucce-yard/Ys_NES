@@ -2,7 +2,7 @@ Ys - Fluffy Repair Service
 
 
 Latest:
-2021-12-15
+2021-12-20
 
 
 
@@ -55,6 +55,7 @@ start_hud
 
 title_screen
 *  Fix stray pixels
+   #  credit to Fray for earlobe pixel
 
 
 
@@ -80,6 +81,15 @@ deadzone_scroll
 
 
 Commits:
+
+
+11c - Fix deadzone scrolling patches
+
+
+
+11b - Title cleanup
+    #  credit to Fray for earlobe pixel
+
 
 
 11a - Datchy fixes for English, Spanish translations
